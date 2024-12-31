@@ -1,35 +1,91 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Home from './pages/Home.jsx'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ContactSection from './pages/ContactUs.jsx'
+import SignIn from './pages/SignIn.jsx'
+import Register from './pages/Register.jsx'
+import AdminScreen from './components/AdminInterviewScreen.jsx'
+import UserScreen from './components/UserInterviewScreen.jsx'
+import About from './pages/About.jsx'
+import ForgotPassword from './components/ForgotPassword.jsx'
+import AdminDashboard from './pages/AdminDashboard.jsx'
+import UserDashboard from './pages/UserDashboard.jsx'
+import AdminNotes from './components/admindashboardcomponents/AdminNotes.jsx'
+import InterviewsManagement from './components/admindashboardcomponents/InterviewsManagement.jsx'
+import UserManagement from './components/admindashboardcomponents/UserManagement.jsx'
+import ScheduleInterview from './components/admindashboardcomponents/ScheduleInterview.jsx'
+import SelectedUsers from './components/admindashboardcomponents/SelectedUsers.jsx'
+import NotFound from './pages/NotFound.jsx'
+import InterviewEnd from './pages/InterviewEnd.jsx'
+import ToggleBackground from './components/ToggleBackground.jsx'
+
+// import LightingCard from './components/CardTryOut.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+   return (
+      <>
+         {/* <LightingCard /> */}
+         <Router>
+            {/* <div className='bg-[linear-gradient(109.6deg,_rgb(9,_9,_121)_11.2%,_rgb(144,_6,_161)_53.7%,_rgb(0,_212,_255)_100.2%)] min-h-screen'> */}
+            <ToggleBackground>
+               <Routes>
+                  <Route path='/' element={<Home />}></Route>
+                  <Route path='/contact' element={<ContactSection />}></Route>
+                  <Route path='/about' element={<About />}></Route>
+                  <Route path='/signin' element={<SignIn />}>
+                     <Route
+                        path='forgotpassword'
+                        element={<ForgotPassword />}
+                     />
+                  </Route>
+                  <Route path='/register' element={<Register />}></Route>
+                  <Route
+                     path='/admindashboard/:id'
+                     element={<AdminDashboard />}
+                  >
+                     <Route
+                        path='usermanagement'
+                        element={<UserManagement />}
+                     />
+                     <Route
+                        path='interviewsmanagement'
+                        element={<InterviewsManagement />}
+                     />
+                     <Route path='adminnotes' element={<AdminNotes />} />
+                     <Route
+                        path='scheduleinterview'
+                        element={<ScheduleInterview />}
+                     />
+                     <Route path='selectedusers' element={<SelectedUsers />} />
+                  </Route>
+                  <Route
+                     path='/userdashboard/:id'
+                     element={<UserDashboard />}
+                  ></Route>
+                  <Route
+                     path='/admininterviewscreen'
+                     element={<AdminScreen />}
+                  ></Route>
+                  <Route
+                     path='/userinterviewscreen'
+                     element={<UserScreen />}
+                  ></Route>
+                  <Route
+                     path='/admininterviewend'
+                     element={<InterviewEnd isAdmin={true} />}
+                  ></Route>
+                  <Route
+                     path='/userinterviewend'
+                     element={<InterviewEnd isAdmin={false} />}
+                  ></Route>
+                  <Route path='*' element={<NotFound />}></Route>
+                  <Route path='/notfound' element={<NotFound />}></Route>
+               </Routes>
+            </ToggleBackground>
+            {/* </div> */}
+         </Router>
+      </>
+   )
 }
 
 export default App
