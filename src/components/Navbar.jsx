@@ -1,8 +1,8 @@
 import React from 'react'
 import { Navbar, Collapse, Typography, Avatar } from '@material-tailwind/react'
-import AvatarWithUserDropdown from './mini-components/Avatar'
+import AvatarWithUserDropdown from './Avatar'
 import { Link } from 'react-router-dom'
-import ThemeToggle from './ToggleTheme'
+import ThemeToggle from '../style/ToggleTheme'
 
 export function NavbarSimple({ isLoggedIn }) {
    const [openNav, setOpenNav] = React.useState(false)

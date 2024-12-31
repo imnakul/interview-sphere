@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import GlowingCard from '../components/mini-components/GlowingCard.jsx'
+import GlowingCard from '../components/GlowingCard.jsx'
 import { useNavigate } from 'react-router-dom'
 
 const About = () => {
