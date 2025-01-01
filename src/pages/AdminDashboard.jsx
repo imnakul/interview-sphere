@@ -60,13 +60,13 @@ function AdminDashboard() {
                </header>
                <div className='flex justify-between bg-transparent min-h-[59vh]'>
                   {/* Sidebar */}
-                  <div class='max-w-xs flex flex-col gap-6 rounded-lg shadow-sm w-1/5 p-4 m-2 text-center justify-center bg-white/30'>
+                  <div className='max-w-xs flex flex-col gap-6 rounded-lg shadow-sm w-1/5 p-4 m-2 text-center justify-center bg-white/30'>
                      <button
                         type='button'
                         onClick={() =>
                            navigate('/admindashboard/usermanagement')
                         }
-                        class='py-2 px-4 inline-flex items-center gap-x-1 rounded-b-md text-sm font-monospace focus:z-10 border border-black hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none bg-purple-500 hover:bg-purple-700  focus:bg-purple-900 text-white'
+                        className='py-2 px-4 inline-flex items-center gap-x-1 rounded-b-md text-sm font-monospace focus:z-10 border border-black hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none bg-purple-500 hover:bg-purple-700  focus:bg-purple-900 text-white'
                      >
                         User Management
                      </button>
@@ -75,14 +75,14 @@ function AdminDashboard() {
                         onClick={() =>
                            navigate('/admindashboard/interviewsmanagement')
                         }
-                        class=' py-2 px-4 inline-flex items-center gap-x-1 rounded-b-md text-sm font-monospace focus:z-10 border border-black hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none bg-purple-500 hover:bg-purple-700  focus:bg-purple-900 text-white'
+                        className=' py-2 px-4 inline-flex items-center gap-x-1 rounded-b-md text-sm font-monospace focus:z-10 border border-black hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none bg-purple-500 hover:bg-purple-700  focus:bg-purple-900 text-white'
                      >
                         Interviews Management
                      </button>
                      <button
                         type='button'
                         onClick={() => navigate('/admindashboard/adminnotes')}
-                        class=' py-2 px-4 inline-flex items-center gap-x-1 rounded-b-md text-sm font-monospace focus:z-10 border border-black hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none bg-purple-500 hover:bg-purple-700  focus:bg-purple-900 text-white'
+                        className=' py-2 px-4 inline-flex items-center gap-x-1 rounded-b-md text-sm font-monospace focus:z-10 border border-black hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none bg-purple-500 hover:bg-purple-700  focus:bg-purple-900 text-white'
                      >
                         My Notes
                      </button>
@@ -91,7 +91,7 @@ function AdminDashboard() {
                         onClick={() =>
                            navigate('/admindashboard/scheduleinterview')
                         }
-                        class=' py-2 px-4 inline-flex items-center gap-x-1 rounded-b-md text-sm font-monospace focus:z-10 border border-black hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none bg-purple-500 hover:bg-purple-700  focus:bg-purple-900 text-white'
+                        className=' py-2 px-4 inline-flex items-center gap-x-1 rounded-b-md text-sm font-monospace focus:z-10 border border-black hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none bg-purple-500 hover:bg-purple-700  focus:bg-purple-900 text-white'
                      >
                         Schedule an Interview
                      </button>
@@ -100,7 +100,7 @@ function AdminDashboard() {
                         onClick={() =>
                            navigate('/admindashboard/selectedusers')
                         }
-                        class=' py-2 px-4 inline-flex items-center gap-x-1 rounded-b-md text-sm font-monospace focus:z-10 border border-black hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none bg-purple-500 hover:bg-purple-700  focus:bg-purple-900 text-white'
+                        className=' py-2 px-4 inline-flex items-center gap-x-1 rounded-b-md text-sm font-monospace focus:z-10 border border-black hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none bg-purple-500 hover:bg-purple-700  focus:bg-purple-900 text-white'
                      >
                         Selected Users
                      </button>
@@ -140,7 +140,7 @@ function AdminDashboard() {
                      <p className='mb-0 p-2 text-center text-xl font-semibold font-monospace'>
                         Interviews:
                      </p>
-                     <ul class='max-h-[300px] overflow-y-auto pr-3 marker:text-blue-600 list-disc ps-1 space-y-3 text-md text-purple-800 font-sans font-monospace my-2 mx-auto'>
+                     <ul className='max-h-[300px] overflow-y-auto pr-3 marker:text-blue-600 list-disc ps-1 space-y-3 text-md text-purple-800 font-sans font-monospace my-2 mx-auto'>
                         <li className='flex justify-between items-center border-2 border-black rounded-b-md py-1 px-2'>
                            Interview 1
                            <button

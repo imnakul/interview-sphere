@@ -18,10 +18,13 @@ import SelectedUsers from './components/admindashboardcomponents/SelectedUsers.j
 import NotFound from './pages/NotFound.jsx'
 import InterviewEnd from './pages/InterviewEnd.jsx'
 import ToggleBackground from './style/ToggleBackground.jsx'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 // import LightingCard from './components/CardTryOut.jsx'
 
 function App() {
+   const theme = localStorage.getItem('theme')
    return (
       <>
          {/* <LightingCard /> */}
@@ -82,6 +85,18 @@ function App() {
                   <Route path='/notfound' element={<NotFound />}></Route>
                </Routes>
             </ToggleBackground>
+            <ToastContainer
+               position='top-right'
+               autoClose={3000}
+               hideProgressBar={false}
+               newestOnTop={false}
+               closeOnClick={false}
+               rtl={false}
+               pauseOnFocusLoss
+               draggable
+               pauseOnHover
+               theme='colored'
+            />
             {/* </div> */}
          </Router>
       </>

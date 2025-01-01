@@ -24,7 +24,7 @@ function Home() {
       <>
          <div className='w-full h-screen overflow-hidden'>
             {/* Video Background */}
-            <video
+            {/* <video
                ref={videoRef}
                autoPlay
                loop
@@ -34,7 +34,7 @@ function Home() {
                poster='/fallback.png'
             >
                <source src='/bg3.mp4' type='video/mp4' />
-            </video>
+            </video> */}
 
             <Navbar isLoggedIn={isLoggedIn} />
             <div className=' flex flex-col align-center min-w-screen min-h-max m-2'>

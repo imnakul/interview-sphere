@@ -405,75 +405,75 @@ function UserDashboard() {
                   </p>
                   <div className='p-4 flex justify-start gap-2 '>
                      <div className='p-1 w-1/2 items-center '>
-                        <ul class='space-y-4 font-medium text-gray-900 bg-white/30 border border-black rounded-lg rounded-t-lg py-2 mb-3'>
-                           <li class='w-full border-b border-gray-200 rounded-t-lg'>
-                              <div class='flex items-center ps-3'>
+                        <ul className='space-y-4 font-medium text-gray-900 bg-white/30 border border-black rounded-lg rounded-t-lg py-2 mb-3'>
+                           <li className='w-full border-b border-gray-200 rounded-t-lg'>
+                              <div className='flex items-center ps-3'>
                                  <input
                                     id='vue-checkbox'
                                     type='checkbox'
                                     value=''
-                                    class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500  '
+                                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500  '
                                     onClick={requestCameraAccess}
                                     checked={cameraPermission} // Bind the checkbox state to cameraPermission
                                  />
                                  <label
                                     for='vue-checkbox'
-                                    class='w-full py-3 ms-2 text-md font-medium text-gray-900 '
+                                    className='w-full py-3 ms-2 text-md font-medium text-gray-900 '
                                  >
                                     Camera Permission
                                  </label>
                               </div>
                            </li>
-                           <li class='w-full border-b border-gray-200 rounded-t-lg '>
-                              <div class='flex items-center ps-3'>
+                           <li className='w-full border-b border-gray-200 rounded-t-lg '>
+                              <div className='flex items-center ps-3'>
                                  <input
                                     id='react-checkbox'
                                     type='checkbox'
                                     value=''
-                                    class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
+                                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
                                     onClick={requestMicrophoneAccess}
                                     checked={microphonePermission} // Bind the checkbox state to microphonePermission
                                     readOnly // Prevent direct toggling since state determines checked status
                                  />
                                  <label
                                     for='react-checkbox'
-                                    class='w-full py-3 ms-2 text-md font-medium text-gray-900 '
+                                    className='w-full py-3 ms-2 text-md font-medium text-gray-900 '
                                  >
                                     Microphone Permission
                                  </label>
                               </div>
                            </li>
-                           <li class='w-full border-b border-gray-200 rounded-t-lg '>
-                              <div class='flex items-center ps-3'>
+                           <li className='w-full border-b border-gray-200 rounded-t-lg '>
+                              <div className='flex items-center ps-3'>
                                  <input
                                     id='angular-checkbox'
                                     type='checkbox'
                                     value=''
-                                    class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
+                                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
                                     onClick={handleScreenCapturePermission}
                                     checked={screenCapturePermission} // Bind the checkbox state to screenCapturePermission
                                  />
                                  <label
                                     for='angular-checkbox'
-                                    class='w-full py-3 ms-2 text-md font-medium text-gray-900 '
+                                    className='w-full py-3 ms-2 text-md font-medium text-gray-900 '
                                  >
                                     Screen Capture Permission
                                  </label>
                               </div>
                            </li>
-                           <li class='w-full border-b border-gray-200 rounded-t-lg '>
-                              <div class='flex items-center ps-3'>
+                           <li className='w-full border-b border-gray-200 rounded-t-lg '>
+                              <div className='flex items-center ps-3'>
                                  <input
                                     id='laravel-checkbox'
                                     type='checkbox'
                                     value=''
-                                    class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
+                                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 '
                                     onClick={handleFullscreenPermission}
                                     checked={fullscreenEnabled} // Bind the checkbox state to fullscreenEnabled
                                  />
                                  <label
                                     for='laravel-checkbox'
-                                    class='w-full py-3 ms-2 text-md font-medium text-gray-900'
+                                    className='w-full py-3 ms-2 text-md font-medium text-gray-900'
                                  >
                                     Full Screen
                                  </label>

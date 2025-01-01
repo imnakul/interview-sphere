@@ -66,7 +66,7 @@ function AdminScreen() {
                {/* right container  */}
                <div className='flex flex-col gap-4 border-2 border-black w-2/3 p-2'>
                   <div
-                     class='inline-flex rounded-md justify-center items-center mt-2'
+                     className='inline-flex rounded-md justify-center items-center mt-2'
                      role='group'
                   >
                      <button
