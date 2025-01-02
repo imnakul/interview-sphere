@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
-import { Auth } from '@supabase/auth-ui-react'
-import supabase from '../services/Supabase'
 
 function Register() {
    const navigate = useNavigate()
@@ -16,57 +14,11 @@ function Register() {
    const [message, setMessage] = useState('')
    const [role, setRole] = useState('user')
 
-   const handleSubmit = async (e) => {
+   const handleSubmit = (e) => {
       e.preventDefault()
-      setMessage('')
-
       if (password !== repeatPassword) {
          setMessage('Passwords do not match')
-         toast.error('Passwords do not match')
          return
-      }
-
-      try {
-         // Sign up the user in Supabase Auth
-         const { data: authData, error: authError } =
-            await supabase.auth.signUp({
-               email: email,
-               password: password,
-            })
-
-         if (authError) {
-            setMessage(authError.message)
-            toast.error(authError.message)
-            return
-         }
-
-         // Extract the authenticated user's data
-         const { user } = authData
-
-         // Insert user details into the `users` table
-         const { error: insertError } = await supabase.from('users').insert([
-            {
-               id: user.id, // Use the ID from the authenticated user
-               name: name,
-               email: email,
-               password: password,
-               role: role,
-            },
-         ])
-
-         if (insertError) {
-            console.error('Error storing user details:', insertError.message)
-            setMessage('Error storing user details')
-            toast.error('Error storing user details')
-            return
-         }
-
-         setMessage('Registered Successfully')
-         toast.success('Registered Successfully')
-         navigate('/signin')
-      } catch (err) {
-         console.error('Unexpected error:', err)
-         toast.error('An unexpected error occurred')
       }
    }
 

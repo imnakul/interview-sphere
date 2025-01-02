@@ -24,7 +24,6 @@ import 'react-toastify/dist/ReactToastify.css'
 // import LightingCard from './components/CardTryOut.jsx'
 
 function App() {
-   const theme = localStorage.getItem('theme')
    return (
       <>
          {/* <LightingCard /> */}
