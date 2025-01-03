@@ -11,13 +11,13 @@ function Icon() {
          xmlns='http://www.w3.org/2000/svg'
          fill='none'
          viewBox='0 0 24 24'
-         stroke-width='1.5'
+         strokeWidth='1.5'
          stroke='currentColor'
-         class='size-6'
+         className='size-6'
       >
          <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
+            strokeLinecap='round'
+            strokeLinejoin='round'
             d='M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z'
          />
       </svg>
@@ -69,7 +69,7 @@ export function SignIn({ type }) {
                      Enter your email and password to sign in
                   </Typography>
 
-                  <form class='max-w-sm mx-auto'>
+                  <form className='max-w-sm mx-auto' onSubmit={handleSubmit}>
                      <div className='flex justify-center gap-10 mb-2'>
                         <Radio
                            name='type'
@@ -106,32 +106,33 @@ export function SignIn({ type }) {
                            // onChange={handleRadioChange}
                         />
                      </div>
-
+                     {/* 
                      <form
                         action='#'
                         className='mx-auto max-w-[24rem] text-left'
                         onSubmit={handleSubmit}
-                     >
-                        <div class='mb-5'>
+                     > */}
+                     <div className='mx-auto max-w-[24rem] text-left'>
+                        <div className='mb-5'>
                            <label
-                              for='email'
-                              class='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+                              htmlFor='email'
+                              className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
                            >
                               Email
                            </label>
-                           <div class='relative'>
-                              <div class='absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none'>
+                           <div className='relative'>
+                              <div className='absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none'>
                                  <svg
-                                    class='shrink-0 size-4 text-gray-500 dark:text-neutral-500'
+                                    className='shrink-0 size-4 text-gray-500 dark:text-neutral-500'
                                     xmlns='http://www.w3.org/2000/svg'
                                     width='24'
                                     height='24'
                                     viewBox='0 0 24 24'
                                     fill='none'
                                     stroke='currentColor'
-                                    stroke-width='2'
-                                    stroke-linecap='round'
-                                    stroke-linejoin='round'
+                                    strokeWidth='2'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
                                  >
                                     <path d='M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2'></path>
                                     <circle cx='12' cy='7' r='4'></circle>
@@ -141,32 +142,32 @@ export function SignIn({ type }) {
                               <input
                                  type='email'
                                  id='email'
-                                 class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                                 className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                                  placeholder='name@gmail.com'
                                  required
                               />
                            </div>
                         </div>
-                        <div class='mb-5'>
+                        <div className='mb-5'>
                            <label
-                              for='password'
-                              class='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+                              htmlFor='password'
+                              className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
                            >
                               Password
                            </label>
-                           <div class='relative'>
-                              <div class='absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none'>
+                           <div className='relative'>
+                              <div className='absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none'>
                                  <svg
-                                    class='shrink-0 size-4 text-gray-500 dark:text-neutral-500'
+                                    className='shrink-0 size-4 text-gray-500 dark:text-neutral-500'
                                     xmlns='http://www.w3.org/2000/svg'
                                     width='24'
                                     height='24'
                                     viewBox='0 0 24 24'
                                     fill='none'
                                     stroke='currentColor'
-                                    stroke-width='2'
-                                    stroke-linecap='round'
-                                    stroke-linejoin='round'
+                                    strokeWidth='2'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
                                  >
                                     <path d='M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4Z'></path>
                                     <circle cx='16.5' cy='7.5' r='.5'></circle>
@@ -175,25 +176,25 @@ export function SignIn({ type }) {
                               <input
                                  type='password'
                                  id='password'
-                                 class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                                 className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                                  placeholder='********'
                                  required
                               />
                            </div>
                         </div>
-                        <div class='flex items-start mb-5'>
-                           <div class='flex items-center h-5'>
+                        <div className='flex items-start mb-5'>
+                           <div className='flex items-center h-5'>
                               <input
                                  id='remember'
                                  type='checkbox'
                                  value=''
-                                 class='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800'
+                                 className='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800'
                                  required
                               />
                            </div>
                            <label
-                              for='remember'
-                              class='ms-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+                              htmlFor='remember'
+                              className='ms-2 text-sm font-medium text-gray-900 dark:text-gray-300'
                            >
                               Remember me
                            </label>
@@ -201,16 +202,17 @@ export function SignIn({ type }) {
                         <div className='inline-flex justify-between items-center'>
                            <button
                               type='submit'
-                              class='text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-300'
+                              className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-300'
                            >
                               SIGN IN
                            </button>
                         </div>
-                     </form>
+                     </div>
+                     {/* </form> */}
                      <div className='!mt-1 flex justify-end'>
                         <button
                            type='submit'
-                           class='text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-auto px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-2 dark:focus:ring-blue-300'
+                           className='text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-auto px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-2 dark:focus:ring-blue-300'
                            onClick={(e) => {
                               e.preventDefault()
                               navigate('/signin/forgotpassword')
@@ -241,7 +243,7 @@ export function SignIn({ type }) {
                         Not registered?{' '}
                         <button
                            type='submit'
-                           class='text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-300 focus:ring-2 ml-4'
+                           className='text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-300 focus:ring-2 ml-4'
                            onClick={(e) => {
                               e.preventDefault()
                               navigate('/register')

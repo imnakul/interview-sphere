@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
+import authservice from '../appwrite/auth'
 
 function Register() {
    const navigate = useNavigate()
@@ -13,13 +14,32 @@ function Register() {
    const [repeatPassword, setRepeatPassword] = useState('')
    const [message, setMessage] = useState('')
    const [role, setRole] = useState('user')
+   const [avatar, setAvatar] = useState(null)
+   const formData = { name, email, password, role, avatar }
 
    const handleSubmit = (e) => {
       e.preventDefault()
       if (password !== repeatPassword) {
          setMessage('Passwords do not match')
-         return
       }
+
+      authservice
+         .createAccount({ email, password, name })
+         .then((response) => {
+            if (response) {
+               setIsLoggedIn(true)
+               setEmail('')
+               setPassword('')
+               setName('')
+               toast.success('Account created successfully')
+               navigate('/signin')
+            }
+         })
+         .catch((error) => {
+            console.log('Error in creating account', error)
+            toast.error(error.message)
+            setPassword('')
+         })
    }
 
    return (
