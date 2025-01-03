@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Typography, Input, Button, Radio } from '@material-tailwind/react'
-import { EyeSlashIcon, EyeIcon } from '@heroicons/react/24/solid'
+// import { EyeSlashIcon, EyeIcon } from '@heroicons/react/24/solid'
 import { useNavigate } from 'react-router-dom'
 import { Outlet, useMatch } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import authservice from '../appwrite/auth'
+import { toast } from 'react-toastify'
 
 function Icon() {
    return (
@@ -30,6 +32,9 @@ export function SignIn({ type }) {
    const [passwordShown, setPasswordShown] = useState(false)
    const togglePasswordVisiblity = () => setPasswordShown((cur) => !cur)
    const navigate = useNavigate()
+   const [email, setEmail] = useState('')
+   const [password, setPassword] = useState('')
+   const [userType, setUserType] = useState('user')
 
    // const handleRadioChange = (e) => {
    //    setUserType(e.target.value)
@@ -42,12 +47,23 @@ export function SignIn({ type }) {
 
    const handleSubmit = (e) => {
       e.preventDefault()
-      setIsLoggedIn(true)
-      if (userType === 'Admin') {
-         navigate('/admindashboard/:id')
-      } else {
-         navigate('/userdashboard/:id')
-      }
+
+      authservice
+         .login({ email, password })
+         .then((response) => {
+            if (response) {
+               setIsLoggedIn(true)
+               setEmail('')
+               setPassword('')
+               // navigate(`/${userType}dashboard`)
+               navigate('/userdashboard/2')
+            }
+         })
+         .catch((error) => {
+            console.log('Error in creating account', error)
+            toast.error(error.message)
+            setPassword('')
+         })
    }
 
    return (
@@ -142,6 +158,8 @@ export function SignIn({ type }) {
                               <input
                                  type='email'
                                  id='email'
+                                 value={email}
+                                 onChange={(e) => setEmail(e.target.value)}
                                  className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                                  placeholder='name@gmail.com'
                                  required
@@ -176,6 +194,8 @@ export function SignIn({ type }) {
                               <input
                                  type='password'
                                  id='password'
+                                 value={password}
+                                 onChange={(e) => setPassword(e.target.value)}
                                  className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                                  placeholder='********'
                                  required
