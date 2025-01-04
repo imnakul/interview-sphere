@@ -9,95 +9,99 @@ export function ContactSection() {
 
    return (
       <>
-         <Navbar isLoggedIn={isLoggedIn} />
-         {/* outer content box */}
-         <div className=' xl:max-w-5xl max-w-sm bg-white/20 rounded-lg p-2 mx-auto my-6 shadow-md'>
-            <div className='min-w-screen flex flex-col xl:flex xl:flex-row gap-5 p-2'>
-               {/* left section  */}
-               <div className='flex flex-col items-center justify-center py-2 lg:py-4 px-2 '>
-                  <h2 className='mb-3 text-4xl tracking-tight font-extrabold text-center text-gray-900 '>
-                     We&apos;re Here to Help
-                  </h2>
+         <div className='flex flex-col h-screen'>
+            <Navbar isLoggedIn={isLoggedIn} />
+            {/* outer content box */}
+            <div className='flex flex-1 items-center justify-center h-full'>
+               <div className='xl:w-2/3  bg-white/20 rounded-lg p-2 mx-4 md:mx-auto shadow-md'>
+                  <div className='min-w-screen flex flex-col md:flex md:flex-row gap-5 p-2'>
+                     {/* left section  */}
+                     <div className='flex flex-col items-center justify-center py-1 lg:py-4 px-1 '>
+                        <h2 className='mb-4 md:text-4xl text-2xl tracking-tight font-extrabold text-center text-gray-900 '>
+                           We&apos;re Here to Help
+                        </h2>
 
-                  <Typography className=' font-normal !text-lg max-w-md !text-white text-center '>
-                     Whether it&apos;s a question about our services, a request
-                     for technical assistance, or suggestions for improvement,
-                     our team is eager to hear from you.
-                  </Typography>
-                  <img
-                     src='/contact-us-animate.svg'
-                     alt='contactImage'
-                     className='min-w-2xl min-h-2xl loading="lazy" '
-                  />
-               </div>
+                        <Typography className=' font-normal text-sm md:!text-lg  max-w-md !text-white text-center '>
+                           Whether it&apos;s a question about our services, a
+                           request for technical assistance, or suggestions for
+                           improvement, our team is eager to hear from you.
+                        </Typography>
+                        <img
+                           src='/contact-us-animate.svg'
+                           alt='contactImage'
+                           className='xl:w-80 xl:h-80 md:w-60 md:h-60 w-20 h-20 loading="lazy" '
+                        />
+                     </div>
 
-               {/* right section  */}
-               <div className='py-2 lg:py-4 px-5 xl:w-2/3 w-full mb-5 xl:mb-0 bg-white/20 shadow-lg rounded-lg '>
-                  <h2 className='mb-4 mt-2 text-4xl tracking-tight font-extrabold text-center text-gray-900 '>
-                     Contact Us
-                  </h2>
-                  {/* <p className='mb-4 lg:mb-4 font-light text-center text-black  sm:text-xl'>
+                     {/* right section  */}
+                     <div className='py-2 lg:py-4 px-5 xl:w-2/3 w-full mb-0 md:mb-5 xl:mb-0 bg-white/20 shadow-lg rounded-lg '>
+                        <h2 className='mb-4 mt-2 text-4xl tracking-tight font-extrabold text-center text-gray-900 '>
+                           Contact Us
+                        </h2>
+                        {/* <p className='mb-4 lg:mb-4 font-light text-center text-black  sm:text-xl'>
                      Got a technical issue? Want to send feedback about a beta
                      feature? Need details about our Business plan? Let us know.
                   </p> */}
-                  <form action='#' className='space-y-8'>
-                     <div>
-                        <label
-                           for='email'
-                           className='block mb-2 text-sm font-medium text-gray-900 '
-                        >
-                           Your email
-                        </label>
-                        <input
-                           type='email'
-                           id='email'
-                           className='shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 '
-                           placeholder='name@flowbite.com'
-                           required
-                        />
+                        <form action='#' className='space-y-8'>
+                           <div>
+                              <label
+                                 for='email'
+                                 className='block mb-2 text-sm font-medium text-gray-900 '
+                              >
+                                 Your email
+                              </label>
+                              <input
+                                 type='email'
+                                 id='email'
+                                 className='shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 '
+                                 placeholder='name@flowbite.com'
+                                 required
+                              />
+                           </div>
+                           <div>
+                              <label
+                                 for='subject'
+                                 className='block mb-2 text-sm font-medium text-gray-900 '
+                              >
+                                 Subject
+                              </label>
+                              <input
+                                 type='text'
+                                 id='subject'
+                                 className='block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 '
+                                 placeholder='Let us know how we can help you'
+                                 required
+                              />
+                           </div>
+                           <div className='sm:col-span-2'>
+                              <label
+                                 for='message'
+                                 className='block mb-2 text-sm font-medium text-gray-900 '
+                              >
+                                 Your message
+                              </label>
+                              <textarea
+                                 id='message'
+                                 rows='5'
+                                 className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 '
+                                 placeholder='Leave a comment...'
+                              ></textarea>
+                           </div>
+                           <div className='flex justify-center'>
+                              <button
+                                 type='submit'
+                                 className='ml-4 py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-purple-800 focus:ring-2 focus:outline-none hover:ring-2 ring-purple-400 bg-purple-600'
+                              >
+                                 Send message
+                              </button>
+                           </div>
+                        </form>
                      </div>
-                     <div>
-                        <label
-                           for='subject'
-                           className='block mb-2 text-sm font-medium text-gray-900 '
-                        >
-                           Subject
-                        </label>
-                        <input
-                           type='text'
-                           id='subject'
-                           className='block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 '
-                           placeholder='Let us know how we can help you'
-                           required
-                        />
-                     </div>
-                     <div className='sm:col-span-2'>
-                        <label
-                           for='message'
-                           className='block mb-2 text-sm font-medium text-gray-900 '
-                        >
-                           Your message
-                        </label>
-                        <textarea
-                           id='message'
-                           rows='5'
-                           className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 '
-                           placeholder='Leave a comment...'
-                        ></textarea>
-                     </div>
-                     <div className='flex justify-center'>
-                        <button
-                           type='submit'
-                           className='ml-4 py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-purple-800 focus:ring-2 focus:outline-none hover:ring-2 ring-purple-400 bg-purple-600'
-                        >
-                           Send message
-                        </button>
-                     </div>
-                  </form>
+                  </div>
                </div>
             </div>
+            {/* <Footer /> */}
          </div>
-         {/* <Footer /> */}
       </>
    )
 }

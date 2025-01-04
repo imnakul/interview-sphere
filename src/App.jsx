@@ -1,23 +1,25 @@
 import './App.css'
-import Home from './pages/Home.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import ContactSection from './pages/ContactUs.jsx'
-import SignIn from './pages/SignIn.jsx'
-import Register from './pages/Register.jsx'
-import AdminScreen from './pages/AdminInterviewScreen.jsx'
-import UserScreen from './pages/UserInterviewScreen.jsx'
-import About from './pages/About.jsx'
-import ForgotPassword from './components/ForgotPassword.jsx'
-import AdminDashboard from './pages/AdminDashboard.jsx'
-import UserDashboard from './pages/UserDashboard.jsx'
-import AdminNotes from './components/admindashboardcomponents/AdminNotes.jsx'
-import InterviewsManagement from './components/admindashboardcomponents/InterviewsManagement.jsx'
-import UserManagement from './components/admindashboardcomponents/UserManagement.jsx'
-import ScheduleInterview from './components/admindashboardcomponents/ScheduleInterview.jsx'
-import SelectedUsers from './components/admindashboardcomponents/SelectedUsers.jsx'
-import NotFound from './pages/NotFound.jsx'
-import InterviewEnd from './pages/InterviewEnd.jsx'
-import ToggleBackground from './style/ToggleBackground.jsx'
+import {
+   Home,
+   ContactSection,
+   SignIn,
+   Register,
+   AdminScreen,
+   UserScreen,
+   About,
+   ForgotPassword,
+   AdminDashboard,
+   UserDashboard,
+   AdminNotes,
+   InterviewsManagement,
+   UserManagement,
+   ScheduleInterview,
+   SelectedUsers,
+   NotFound,
+   InterviewEnd,
+   ToggleBackground,
+} from './index.js'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
