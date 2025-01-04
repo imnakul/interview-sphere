@@ -78,7 +78,7 @@ export function SignIn({ type }) {
             {/* dynamic Form section  */}
             {!matchForgotPassword && (
                <div className='flex items-center justify-center h-full'>
-                  <section className=' grid text-center items-center max-w-sm xl:max-w-2xl mx-auto bg-white/40 p-5 rounded-md'>
+                  <section className=' grid text-center items-center md:w-96 mx-auto bg-white/30 dark:bg-white/40 p-5 rounded-md'>
                      <div>
                         <Typography
                            variant='h3'

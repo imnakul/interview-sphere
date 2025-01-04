@@ -47,7 +47,7 @@ function Register() {
          <div className='flex flex-col h-screen'>
             <Navbar isLoggedIn={isLoggedIn} />
             <div className='flex flex-1 items-center justify-center h-full'>
-               <div className=' xl:max-w-md max-w-sm mx-auto p-6 bg-white/30 rounded-md'>
+               <div className=' md:w-1/2 xl:w-1/3 mx-auto p-5 bg-white/30 dark:bg-white/40 rounded-md'>
                   <form onSubmit={handleSubmit}>
                      <Typography
                         variant='h3'
